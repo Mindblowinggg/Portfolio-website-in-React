@@ -16,14 +16,14 @@ const headingContainerVariants = {
 };
 
 const letterVariants = {
-  hidden: { scale: 0, opacity: 0 },
+  hidden: { scale: 0.6, opacity: 1 },
   visible: {
     scale: 1,
     opacity: 1,
     transition: {
       type: "spring",
+      stiffness: 800,
       damping: 20,
-      stiffness: 200,
     },
   },
 };

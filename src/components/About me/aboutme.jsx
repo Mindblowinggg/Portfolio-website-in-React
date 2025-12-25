@@ -8,7 +8,7 @@ import { ThemeContext } from "../../context/Themecontext";
 
 // Variants for main container animation
 const containerVariants = {
-  hidden: { opacity: 0.9 },
+  hidden: { opacity: 0.95 },
   visible: {
     opacity: 1,
     transition: {
@@ -26,8 +26,7 @@ const letterVariants = {
     opacity: 1,
     transition: {
       type: "spring",
-      damping: 12,
-      stiffness: 800,
+      stiffness: 150,
     },
   },
 };
@@ -46,10 +45,10 @@ const fadeInVariants = {
 };
 
 const AboutMe = () => {
+  const { theme } = useContext(ThemeContext);
+
   const text = "About Me";
   const letters = Array.from(text);
-
-  const { theme } = useContext(ThemeContext);
 
   return (
     <motion.div

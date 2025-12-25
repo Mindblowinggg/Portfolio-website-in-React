@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Herostyles from "./hero.module.css";
 import { ThemeContext } from "../../context/Themecontext";
 
-const Typingeffect = ({ currentTheme }) => {
+const Typingeffect = () => {
   const [typedText, setTypedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

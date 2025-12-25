@@ -3,7 +3,7 @@ import styles from "./connect.module.css";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { ThemeContext } from "../../context/Themecontext";
 
-const Connect = ({ currentTheme }) => {
+const Connect = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div
