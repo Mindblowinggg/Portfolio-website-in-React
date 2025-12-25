@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react"; // 1. useContext import kiya
 import { motion } from "framer-motion";
 import Styles from "./Navbar.module.css";
 import logo from "/A.png";
@@ -6,10 +6,13 @@ import DarkModeToggle from "./DarkModeBtn";
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import { ThemeContext } from "../../context/Themecontext";
 
-const Navbar = ({ currentTheme, onToggleTheme }) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [opendropdown, setopendropdown] = useState(false);
+
+  const { theme, handleToggle } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -29,7 +32,7 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
       animate={{ opacity: 1, y: 0, x: "-50%" }}
       transition={{ duration: 2.2, type: "spring" }}
       className={`${Styles.navbar} ${
-        currentTheme === "light" ? Styles.lightNavbar : Styles.darkNavbar
+        theme === "light" ? Styles.lightNavbar : Styles.darkNavbar
       } px-1 rounded-full`}
     >
       <div className={Styles.navbarLogo}>
@@ -37,18 +40,14 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
 
         <p
           className={`${Styles.logoText} ${
-            currentTheme === "light"
-              ? Styles.amanKaharLight
-              : Styles.amanKaharDark
+            theme === "light" ? Styles.amanKaharLight : Styles.amanKaharDark
           } ml-5`}
         >
           Aman
         </p>
         <p
           className={`${Styles.logoText} ${
-            currentTheme === "light"
-              ? Styles.amanKaharLight
-              : Styles.amanKaharDark
+            theme === "light" ? Styles.amanKaharLight : Styles.amanKaharDark
           }`}
         >
           Kahar
@@ -58,7 +57,7 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
       <div className={Styles.navbarMenuContainer}>
         <div className="flex justify-center items-center">
           <span className={Styles.modetext}>
-            {currentTheme === "light" ? (
+            {theme === "light" ? (
               <>
                 {"Switch to "}
                 <br />
@@ -75,27 +74,27 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
 
           <IoIosArrowRoundForward />
         </div>
-        <DarkModeToggle currentTheme={currentTheme} onToggle={onToggleTheme} />
+
+        <DarkModeToggle currentTheme={theme} onToggle={handleToggle} />
+
         <div className="relative">
           <button
             onClick={() => toggleMenu()}
             className={` ${
-              currentTheme === "light"
-                ? Styles.menubtnLight
-                : Styles.menubtnDark
+              theme === "light" ? Styles.menubtnLight : Styles.menubtnDark
             }`}
           >
             {/* Conditional Rendering of Icons */}
             {menuOpen ? (
               <RiCloseFill
                 className={` size-5 ${
-                  currentTheme === "light" ? Styles.menuLight : Styles.menuDark
+                  theme === "light" ? Styles.menuLight : Styles.menuDark
                 }`}
               />
             ) : (
               <RiMenu4Fill
                 className={` size-5 ${
-                  currentTheme === "light" ? Styles.menuLight : Styles.menuDark
+                  theme === "light" ? Styles.menuLight : Styles.menuDark
                 }`}
               />
             )}
@@ -105,9 +104,7 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
         {menuOpen && (
           <div
             className={` relative ${
-              currentTheme === "light"
-                ? Styles.menudivlight
-                : Styles.menudivdark
+              theme === "light" ? Styles.menudivlight : Styles.menudivdark
             }`}
           >
             <a
@@ -121,9 +118,7 @@ const Navbar = ({ currentTheme, onToggleTheme }) => {
             {opendropdown && (
               <div
                 className={` absolute ${
-                  currentTheme === "light"
-                    ? Styles.drop1divlight
-                    : Styles.drop1divdark
+                  theme === "light" ? Styles.drop1divlight : Styles.drop1divdark
                 }`}
               >
                 <a

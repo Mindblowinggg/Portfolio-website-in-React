@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import styles from "./education.module.css";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { GiGraduateCap } from "react-icons/gi";
+import { ThemeContext } from "../../context/Themecontext";
 
 const containerVariants = {
   hidden: { opacity: 0.9 },
@@ -41,20 +43,21 @@ const fadeInVariants = {
   },
 };
 
-const Education = ({ currentTheme }) => {
+const Education = () => {
   const text = "Education";
   const letters = Array.from(text);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
       className={`${styles.educationContainer} ${
-        currentTheme === "light" ? styles.lightContainer : styles.darkContainer
+        theme === "light" ? styles.lightContainer : styles.darkContainer
       }`}
     >
       {/* Animated Heading */}
       <motion.h2
         className={`flex justify-center ${
-          currentTheme === "light" ? styles.headinglight : styles.headingdark
+          theme === "light" ? styles.headinglight : styles.headingdark
         }`}
         variants={containerVariants}
         initial="hidden"
@@ -79,7 +82,7 @@ const Education = ({ currentTheme }) => {
         {/* Card for Graduation */}
         <div
           className={`${styles.educationCard} ${
-            currentTheme === "light" ? styles.lightCard : ""
+            theme === "light" ? styles.lightCard : ""
           }`}
         >
           <div className={styles.timeline}>

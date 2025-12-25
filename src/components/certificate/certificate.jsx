@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import styles from "./certificate.module.css";
 import { FaEye } from "react-icons/fa";
 import { BsFileEarmarkTextFill } from "react-icons/bs";
+import { ThemeContext } from "../../context/Themecontext";
 
 // Variants for the heading (individual letters)
 const headingContainerVariants = {
@@ -45,7 +47,8 @@ const certificateData = {
   viewLink: "https://cert.diceid.com/cid/zdwm69lpfB",
 };
 
-const Certificates = ({ currentTheme }) => {
+const Certificates = () => {
+  const { theme } = useContext(ThemeContext);
   const text = "Certificates";
   const letters = Array.from(text);
 
@@ -56,12 +59,12 @@ const Certificates = ({ currentTheme }) => {
   return (
     <div
       className={`${styles.certificatesContainer} ${
-        currentTheme === "light" ? styles.lightContainer : styles.darkContainer
+        theme === "light" ? styles.lightContainer : styles.darkContainer
       }`}
     >
       <motion.h2
         className={`${
-          currentTheme === "light" ? styles.headerlight : styles.headerdark
+          theme === "light" ? styles.headerlight : styles.headerdark
         } flex justify-center`} // Flex class added for letter animation
         variants={headingContainerVariants}
         initial="hidden"
@@ -85,7 +88,7 @@ const Certificates = ({ currentTheme }) => {
         <div
           key={certificateData.id}
           className={`${styles.certificateCard} ${
-            currentTheme === "light" ? styles.lightCard : ""
+            theme === "light" ? styles.lightCard : ""
           }`}
         >
           <div className={styles.cardHeader}>

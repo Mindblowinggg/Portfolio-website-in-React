@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import styles from "./aboutme.module.css";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { FaGamepad, FaCarSide } from "react-icons/fa";
+import { ThemeContext } from "../../context/Themecontext";
 
 // Variants for main container animation
 const containerVariants = {
@@ -43,14 +45,16 @@ const fadeInVariants = {
   },
 };
 
-const AboutMe = ({ currentTheme }) => {
+const AboutMe = () => {
   const text = "About Me";
   const letters = Array.from(text);
+
+  const { theme } = useContext(ThemeContext);
 
   return (
     <motion.div
       className={`${styles.aboutMeContainer} ${
-        currentTheme === "light" ? styles.lightContainer : styles.darkContainer
+        theme === "light" ? styles.lightContainer : styles.darkContainer
       }`}
       variants={containerVariants}
       initial="hidden"
@@ -60,7 +64,7 @@ const AboutMe = ({ currentTheme }) => {
       {/* Animated Heading */}
       <h2
         className={`flex justify-center ${
-          currentTheme === "light" ? styles.headinglight : styles.headingdark
+          theme === "light" ? styles.headinglight : styles.headingdark
         }`}
       >
         {letters.map((letter, index) => (
@@ -107,9 +111,7 @@ const AboutMe = ({ currentTheme }) => {
       >
         <h3
           className={
-            currentTheme === "light"
-              ? styles.hobbyTextlight
-              : styles.hobbyTextdark
+            theme === "light" ? styles.hobbyTextlight : styles.hobbyTextdark
           }
         >
           My Hobbies:

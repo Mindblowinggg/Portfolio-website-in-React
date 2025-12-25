@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./connect.module.css";
-import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { ThemeContext } from "../../context/Themecontext";
 
 const Connect = ({ currentTheme }) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <div
       className={`${styles.connectContainer} ${
-        currentTheme === "light" ? styles.lightContainer : styles.darkContainer
+        theme === "light" ? styles.lightContainer : styles.darkContainer
       }`}
     >
-      <h2 className={`${styles.heading} ${styles.connectContainer} ${
-        currentTheme === "light" ? styles.headinglight : styles.headingdark
-      }`}>Connect With Me</h2>
-
+      <h2
+        className={`${styles.heading} ${styles.connectContainer} ${
+          theme === "light" ? styles.headinglight : styles.headingdark
+        }`}
+      >
+        Connect With Me
+      </h2>
 
       <div className={styles.socialLinksGrid}>
         {/* LinkedIn Card */}
         <a
-          href="https://www.linkedin.com/in/aman-kahar-111453267/" 
+          href="https://www.linkedin.com/in/aman-kahar-111453267/"
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.socialCard} ${
-            currentTheme === "light" ? styles.lightCard : styles.darkCard
+            theme === "light" ? styles.lightCard : styles.darkCard
           }`}
         >
           <div className={styles.socialIconWrapper}>
@@ -32,11 +37,11 @@ const Connect = ({ currentTheme }) => {
 
         {/* Instagram Card */}
         <a
-          href="/" 
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.socialCard} ${
-            currentTheme === "light" ? styles.lightCard : styles.darkCard
+            theme === "light" ? styles.lightCard : styles.darkCard
           }`}
         >
           <div className={styles.socialIconWrapper}>

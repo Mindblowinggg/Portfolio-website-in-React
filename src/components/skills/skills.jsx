@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import styles from "./skill.module.css";
 import { FaHtml5 } from "react-icons/fa";
@@ -9,6 +10,7 @@ import { FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { VscVscode } from "react-icons/vsc";
 import { FaGithub } from "react-icons/fa";
+import { ThemeContext } from "../../context/Themecontext";
 
 // Variants for the heading (individual letters)
 const headingContainerVariants = {
@@ -45,19 +47,20 @@ const fadeInVariants = {
   },
 };
 
-const Skills = ({ currentTheme }) => {
+const Skills = () => {
   const text = "Skills";
   const letters = Array.from(text);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
       className={`${styles.skillsContainer} ${
-        currentTheme === "light" ? styles.lightContainer : styles.darkContainer
+        theme === "light" ? styles.lightContainer : styles.darkContainer
       }`}
     >
       <motion.h2
         className={`${styles.heading} flex justify-center ${
-          currentTheme === "light" ? styles.titlelight : styles.titledark
+          theme === "light" ? styles.titlelight : styles.titledark
         }`}
         variants={headingContainerVariants}
         initial="hidden"
@@ -81,7 +84,7 @@ const Skills = ({ currentTheme }) => {
       >
         <h3
           className={`${styles.groupHeading} ${
-            currentTheme === "light" ? styles.headinglight : styles.headingdark
+            theme === "light" ? styles.headinglight : styles.headingdark
           }`}
         >
           Design Tools I Use
@@ -104,7 +107,7 @@ const Skills = ({ currentTheme }) => {
       >
         <h3
           className={`${styles.groupHeading} ${
-            currentTheme === "light" ? styles.headinglight : styles.headingdark
+            theme === "light" ? styles.headinglight : styles.headingdark
           }`}
         >
           Technologies I Use
@@ -143,7 +146,7 @@ const Skills = ({ currentTheme }) => {
       >
         <h3
           className={`${styles.groupHeading} ${
-            currentTheme === "light" ? styles.headinglight : styles.headingdark
+            theme === "light" ? styles.headinglight : styles.headingdark
           }`}
         >
           Development & Productivity Tools I Use
@@ -164,9 +167,7 @@ const Skills = ({ currentTheme }) => {
         <a href="https://github.com/Mindblowinggg" target="blank">
           <motion.button
             className={`px-10 flex items-center justify-center cursor-pointer rounded-3xl py-3 mt-9 border-3 border-amber-400 transform transition-transform duration-300 hover:scale-105 ${
-              currentTheme === "light"
-                ? styles.resumeBtnLight
-                : styles.resumeBtnDark
+              theme === "light" ? styles.resumeBtnLight : styles.resumeBtnDark
             }`}
             variants={fadeInVariants}
             initial="hidden"

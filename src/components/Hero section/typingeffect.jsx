@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Herostyles from "./hero.module.css";
+import { ThemeContext } from "../../context/Themecontext";
 
 const Typingeffect = ({ currentTheme }) => {
   const [typedText, setTypedText] = useState("");
@@ -7,6 +8,8 @@ const Typingeffect = ({ currentTheme }) => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(90);
   const [showCursor, setShowCursor] = useState(true);
+
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -59,7 +62,7 @@ const Typingeffect = ({ currentTheme }) => {
     <div>
       <p
         className={`text-3xl mt-5 ${
-          currentTheme === "light" ? Herostyles.ptaglight : Herostyles.ptagdark
+          theme === "light" ? Herostyles.ptaglight : Herostyles.ptagdark
         }`}
         style={{ overflowWrap: "break-word" }}
       >
