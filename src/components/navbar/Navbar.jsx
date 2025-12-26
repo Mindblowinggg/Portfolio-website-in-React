@@ -7,6 +7,7 @@ import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { ThemeContext } from "../../context/Themecontext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,33 +69,11 @@ const Navbar = () => {
         {/* ======================================================= */}
         {/*  DESKTOP MENU (Laptop Screen) - Hover Logic Here      */}
         {/* ======================================================= */}
-        <div className="hidden md:flex items-center ml-4">
-          <div
-            className="relative select-none cursor-pointer py-3 px-2"
-            onClick={() => setopendropdown(!opendropdown)}
-          >
-            <div className="flex items-center font-semibold gap-1">
+        <div className="hidden md:flex items-center justify-center mx-4">
+          <div className="relative select-none cursor-pointer py-2 px-2 hover:bg-gray-300 rounded-lg border-2 transition-all duration-100">
+            <Link className="font-semibold " to={"/projects"}>
               Projects
-              {opendropdown ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-            </div>
-
-            {/* Desktop Dropdown Box */}
-            {opendropdown && (
-              <div
-                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-50 rounded-lg shadow-xl py-2 z-50 ${
-                  theme === "light" ? Styles.drop1divlight : Styles.drop1divdark
-                }`}
-              >
-                <a
-                  href="https://example-eight-fawn.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center text-center hover:opacity-70 font-medium"
-                >
-                  Project 1
-                </a>
-              </div>
-            )}
+            </Link>
           </div>
         </div>
 

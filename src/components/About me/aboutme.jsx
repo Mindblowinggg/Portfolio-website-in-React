@@ -18,19 +18,6 @@ const containerVariants = {
   },
 };
 
-// Variants for animated heading letters
-const letterVariants = {
-  hidden: { scale: 0.6, opacity: 1 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 150,
-    },
-  },
-};
-
 // Variants for fade-in animation of sections
 const fadeInVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -48,7 +35,6 @@ const AboutMe = () => {
   const { theme } = useContext(ThemeContext);
 
   const text = "About Me";
-  const letters = Array.from(text);
 
   return (
     <motion.div
@@ -61,17 +47,13 @@ const AboutMe = () => {
       viewport={{ once: true, amount: 0.5 }}
     >
       {/* Animated Heading */}
-      <h2
+      <motion.h2
         className={`flex justify-center ${
           theme === "light" ? styles.headinglight : styles.headingdark
         }`}
       >
-        {letters.map((letter, index) => (
-          <motion.span key={index} variants={letterVariants}>
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
-      </h2>
+        {text}
+      </motion.h2>
 
       {/* Project Experience Card */}
       <motion.div

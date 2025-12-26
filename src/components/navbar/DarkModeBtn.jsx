@@ -1,19 +1,16 @@
-
-import React from "react"; 
-import "./darkmode.css"; 
-
+import React from "react";
+import "./darkmode.css";
 
 const DarkModeBtn = ({ currentTheme, onToggle }) => {
   return (
-    <label className="switch"> 
+    <label className="switch">
       <input
-        checked={currentTheme === 'light'}
-        onClick={onToggle}
-        id="checkbox" 
+        checked={currentTheme === "light"}
+        onChange={onToggle}
+        id="checkbox"
         type="checkbox"
       />
       <span className="slider">
-        
         <div className="star star_1"></div>
         <div className="star star_2"></div>
         <div className="star star_3"></div>

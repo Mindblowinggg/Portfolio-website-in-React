@@ -17,19 +17,6 @@ const containerVariants = {
   },
 };
 
-const letterVariants = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      damping: 15,
-      stiffness: 200,
-    },
-  },
-};
-
 // Variants for the fade-in animation
 const fadeInVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -45,7 +32,6 @@ const fadeInVariants = {
 
 const Education = () => {
   const text = "Education";
-  const letters = Array.from(text);
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -64,11 +50,7 @@ const Education = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
-        {letters.map((letter, index) => (
-          <motion.span key={index} variants={letterVariants}>
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
+        {text}
       </motion.h2>
 
       {/* Education Cards */}
