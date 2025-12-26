@@ -16,14 +16,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    if (menuOpen) {
-      setopendropdown(false);
-    }
-  };
-
-  const closeAllMenus = () => {
-    setMenuOpen(false);
-    setopendropdown(false);
   };
 
   return (
