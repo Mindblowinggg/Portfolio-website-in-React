@@ -111,27 +111,13 @@ const Navbar = () => {
             }`}
           >
             {/* Mobile Click Logic */}
-            <div
+            <Link
+              to={"/projects"}
+              onClick={() => setMenuOpen(false)}
               className="flex justify-between items-center cursor-pointer mb-2"
-              onClick={() => setopendropdown(!opendropdown)}
             >
               Projects
-              {opendropdown ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-            </div>
-
-            {opendropdown && (
-              <div className="pl-4 border-l-2 border-gray-400">
-                <a
-                  href="https://example-eight-fawn.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeAllMenus}
-                  className="block py-1 text-sm"
-                >
-                  Project 1
-                </a>
-              </div>
-            )}
+            </Link>
           </div>
         )}
       </div>
