@@ -88,7 +88,7 @@ const Projects = () => {
                 <div className="p-6 flex-grow">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-2xl font-bold capitalize leading-tight">
-                      {repo.name.replace(/-/g, " ")}
+                      {repo.name}
                     </h3>
 
                     {repo.language && (
