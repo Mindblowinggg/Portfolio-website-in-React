@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [opendropdown, setopendropdown] = useState(false);
 
   const { theme, handleToggle } = useContext(ThemeContext);
 
