@@ -9,14 +9,14 @@
 
 .lightContainer {
   background-color: white;
-
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: #333;
 
 }
 
 .darkContainer {
   background-color: black;
-
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: #fff;
 
 }
@@ -39,7 +39,7 @@
   font-family: "Michroma", sans-serif;
   display: flex;
   justify-content: center;
-  
+
 }
 
 
@@ -136,8 +136,8 @@
 @media (min-width:0px) and (max-width:600px) {
   .headinglight {
     font-size: 30px;
-    font-weight:900;
-    
+    font-weight: 900;
+
   }
 
   .headingdark {

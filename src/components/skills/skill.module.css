@@ -6,23 +6,25 @@
 }
 
 .lightContainer {
-  background-color: #ffffff; 
-  color: #000000; 
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .darkContainer {
-  background-color: #1a1a1a; 
-  color: #e0e0e0; 
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.titlelight{
+.titlelight {
   font-weight: 900;
   font-size: 50px;
   color: black;
 }
 
 
-.titledark{
+.titledark {
   font-weight: 900;
   font-size: 50px;
   color: gold;
@@ -34,55 +36,55 @@
   font-family: "Michroma", sans-serif;
 }
 
-.headinglight{
+.headinglight {
   color: black;
 }
 
-.headingdark{
+.headingdark {
   color: gold;
 }
 
 
 .skillsGroup {
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .groupHeading {
   margin-bottom: 20px;
   font-family: "Michroma", sans-serif;
- 
+
 }
 
 .skillsList {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
   border-radius: 10px;
- 
+
 }
 
 .lightContainer .skillsList {
-  background-color: #ffffff; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .darkContainer .skillsList {
-  background-color: #222; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
-.lightContainer  {
-  background-color: #f0f0f0; 
+.lightContainer {
+  background-color: #f0f0f0;
   color: #000000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.darkContainer  {
-  background-color: #333; 
-  color: #f0f0f0; 
+.darkContainer {
+  background-color: #333;
+  color: #f0f0f0;
 }
 
 .resumeBtnDark {
@@ -100,31 +102,33 @@
 
 
 @media (min-width:0px) and (max-width:600px) {
-  
-  .headinglight{
+
+  .headinglight {
     font-size: 30px;
     text-align: center;
   }
-   .headingdark{
+
+  .headingdark {
     font-size: 30px;
     text-align: center;
   }
-  .titledark{
+
+  .titledark {
     font-size: 30px;
   }
 
-  .titlelight{
+  .titlelight {
     font-size: 30px;
   }
-  
+
 }
 
 
 @media (min-width:1000px) {
 
-  .skillsList{
+  .skillsList {
     gap: 100px;
     font-size: 20px;
   }
-  
+
 }

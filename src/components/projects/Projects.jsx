@@ -151,10 +151,8 @@ const Projects = () => {
               </motion.div>
             ))
           ) : (
-            // Agar allowedProjects mein naam galat hua toh yeh dikhega
             <p className="text-center col-span-3 text-red-500 font-bold">
-              Error: Koi Project match nahi hua! 'allowedProjects' array mein
-              spelling check karo.
+              Error: NO PROJECT FOUND!
             </p>
           )}
         </div>

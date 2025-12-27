@@ -23,13 +23,12 @@ const headingContainerVariants = {
 
 // Variants for the fade-in animation
 const fadeInVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeOut",
+      duration: 0.5,
     },
   },
 };

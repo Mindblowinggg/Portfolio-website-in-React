@@ -3,17 +3,19 @@
 .certificatesContainer {
   padding: 40px 20px;
   text-align: center;
-  
+
 }
 
 .lightContainer {
   background-color: #f0f2f5;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .darkContainer {
   background-color: #1a1a1a;
   color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .headerlight {
@@ -21,7 +23,7 @@
   margin-bottom: 30px;
   font-size: 50px;
   font-family: "Michroma", sans-serif;
- 
+
 }
 
 .headerdark {
@@ -29,7 +31,7 @@
   margin-bottom: 30px;
   font-size: 50px;
   font-family: "Michroma", sans-serif;
- 
+
 }
 
 .certificateCards {
@@ -37,7 +39,7 @@
   justify-content: center;
   text-align: center;
   gap: 30px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .certificateCard {
@@ -45,10 +47,10 @@
   color: #f0f0f0;
   border-radius: 15px;
   padding: 25px;
-  width: 500px; 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+  width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,7 +65,7 @@
 .lightCard {
   background-color: #ffffff;
   color: #444;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .lightCard:hover {
@@ -134,16 +136,16 @@
 
 @media (min-width:0px) and (max-width:400px) {
 
-  .headerlight{
+  .headerlight {
     font-size: 30px;
     font-weight: 900;
   }
 
-  .headerdark{
+  .headerdark {
     font-size: 30px;
     font-weight: 900;
   }
 
 
-  
+
 }

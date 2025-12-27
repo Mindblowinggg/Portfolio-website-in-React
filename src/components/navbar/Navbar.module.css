@@ -15,35 +15,48 @@
   padding: 0 12px;
 }
 
-.menudivlight{
+.lightNavbar {
+  background-color: #f0f2f5;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.darkNavbar {
+  background-color: #e7e7e7;
+  transition: background-color 0.3s ease;
+}
+
+.menudivlight {
   position: absolute;
   top: 100%;
   color: rgb(0, 0, 0);
   background-color: #aeacac;
   padding: 20px 60px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.menudivdark{
+.menudivdark {
   position: absolute;
   top: 100%;
-  color: white;
-  background-color: #292929;
+  color: rgb(0, 0, 0);
+  background-color: #b92323;
   padding: 20px 60px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.drop1divlight{
-   position: absolute;
+.drop1divlight {
+  position: absolute;
   top: 100%;
   color: rgb(0, 0, 0);
   background-color: #aeacac;
   padding: 20px 60px;
-   left: 0;
+  left: 0;
   width: 100%;
 
 }
 
-.drop1divdark{
-   position: absolute;
+.drop1divdark {
+  position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
@@ -55,19 +68,20 @@
 
 
 
-.menuDark{
-  color:#efae02 ;
+.menuDark {
+  color: #efae02;
 }
 
-.menuLight{
+.menuLight {
   color: black;
 }
 
-.modetext{
+.modetext {
   color: black;
   font-size: 12px;
   text-align: center;
   width: 80px;
+  transition: all 3s ease;
 
 }
 
@@ -90,22 +104,22 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  
+
 }
 
 
 .menubtnDark {
   background-color: black;
   border: 1px solid #333;
-  
+
   color: #efae02;
   padding: 14px;
-  
+
   cursor: pointer;
   border-radius: 1000px;
   font-size: 1rem;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -114,15 +128,15 @@
 .menubtnLight {
   background-color: rgb(234, 230, 230);
   border: 1px solid #333;
-  
+
   color: #efae02;
   padding: 14px;
-  
+
   cursor: pointer;
   border-radius: 1000px;
   font-size: 1rem;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -131,7 +145,7 @@
 
 .menuButton:hover {
   background-color: #333;
-  
+
   border-color: #555;
 }
 
@@ -146,27 +160,26 @@
 
 
 
-  @media (min-width:0px) and  (max-width: 400px) {
-  .navbarLogo > :nth-child(2),
-  .navbarLogo > :nth-child(3) {
+@media (min-width:0px) and (max-width: 400px) {
+
+  .navbarLogo> :nth-child(2),
+  .navbarLogo> :nth-child(3) {
     display: none;
   }
 }
 
-@media (min-width:400px) and  (max-width: 800px) {
-  .navbarLogo > :nth-child(2),
-  .navbarLogo > :nth-child(3) {
+@media (min-width:400px) and (max-width: 800px) {
+
+  .navbarLogo> :nth-child(2),
+  .navbarLogo> :nth-child(3) {
     display: none;
   }
 
-  .menubtnDark , .menubtnLight{
+  .menubtnDark,
+  .menubtnLight {
     width: 80px;
   }
 
-  
- 
+
+
 }
-
-
-
-    
