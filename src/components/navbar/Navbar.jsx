@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Styles from "./Navbar.module.css";
 import logo from "/A.png";
 import DarkModeToggle from "./DarkModeBtn";
@@ -49,21 +49,16 @@ const Navbar = () => {
       <div className={Styles.navbarMenuContainer}>
         {/* --- TOGGLE TEXT SECTION --- */}
         <div className="hidden sm:flex justify-center items-center w-fit">
-          {" "}
-          {/* Width fix ki taaki text hilne par layout na hile */}
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.span
-              key={theme}
-              initial={{ y: 0, opacity: 0.5 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className={`${Styles.modetext} block`}
-            >
-              {theme === "light"
-                ? "Switch to Dark Mode"
-                : "Switch to Light Mode"}
-            </motion.span>
-          </AnimatePresence>
+          <motion.span
+            key={theme}
+            initial={{ y: 0, opacity: 0.5 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            className={`${Styles.modetext} block`}
+          >
+            {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+          </motion.span>
+
           <IoIosArrowRoundForward className={`ml-1 text-xl `} />
         </div>
         <DarkModeToggle currentTheme={theme} onToggle={handleToggle} />
