@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Styles from "./Navbar.module.css";
 import logo from "/A.png";
